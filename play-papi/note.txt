@@ -1,0 +1,4 @@
+papi_avail -e [event name] --> get detailed info
+papi_avail ~ papi_decode
+
+http://icl.cs.utk.edu/papi/docs/index.html
