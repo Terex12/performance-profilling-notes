@@ -1,0 +1,34 @@
+#!/bin/sh
+#SBATCH --partition=batch-bdw-v100
+#SBATCH --nodes=1
+#SBATCH --mem=32GB
+#SBATCH --time=23:00:00
+
+#SBATCH --job-name=libx-conv
+#SBATCH --output=conv-libx-ocr.txt
+
+#SBATCH --ntasks=1
+#SBATCH --nodes=1
+
+libxpath=/home/yufan/Research/libxsmm
+cd ${libxpath}
+g++ -I${libxpath}/include conv2d.cpp -L${libxpath}/lib -mavx2 -lxsmm -lblas -fopenmp -o conv2d
+#   1   2  3  4   5   6   7  8   9       10    11
+# iters N, H, W, CO, CI, KH, KW, strides, paddH padW
+
+
+
+#OCR
+printf "\n==== Start Execution 1 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 48 480 16 1 3 3 1 1 1
+printf "\n==== Start Execution 2 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 24 240 32 16 3 3 1 1 1
+
+printf "\n==== Start Execution 3 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 12 120 64 32 3 3 1 1 1
+printf "\n==== Start Execution 4 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 6 60 128 64 3 3 1 1 1
+
+
+
+printf "\n==== Done  =====" 

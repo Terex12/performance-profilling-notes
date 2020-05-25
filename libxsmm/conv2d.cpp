@@ -69,6 +69,8 @@ int main(int argc, char* argv[])
     int nThreads = 1; /* number of threads */
 #endif
 
+    printf("num of thread: %d\n", nThreads);
+
     unsigned long long l_start, l_end;
     double l_total = 0.0;
     double flops = 0.0;

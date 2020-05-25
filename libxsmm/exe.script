@@ -1,0 +1,49 @@
+#!/bin/sh
+#SBATCH --partition=batch-bdw-v100
+#SBATCH --nodes=1
+#SBATCH --mem=32GB
+#SBATCH --time=23:00:00
+
+#SBATCH --job-name=libx-conv
+#SBATCH --output=conv-libx-yolo.txt
+
+#SBATCH --ntasks=1
+#SBATCH --nodes=1
+
+libxpath=/home/yufan/Research/libxsmm
+cd ${libxpath}
+g++ -I${libxpath}/include conv2d.cpp -L${libxpath}/lib -mavx2 -lxsmm -lblas -fopenmp -o conv2d
+#   1   2  3  4   5   6   7  8   9   10    11    12
+# iters N, H, W, CO, CI, KH, KW, strides, paddH padW
+
+
+
+#Yolo
+printf "\n==== Start Execution 0 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 546 546 32 3 3 3 1 0 0
+printf "\n==== Start Execution 1 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 274 274 64 32 3 3 1 0 0
+printf "\n==== Start Execution 2 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 138 138 128 64 3 3 1 0 0
+
+
+printf "\n==== Start Execution 3 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 136 136 64 128 1 1 1 0 0
+printf "\n==== Start Execution 4 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 70 70 256 128 3 3 1 0 0
+printf "\n==== Start Execution 5 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 68 68 128 256 1 1 1 0 0 
+
+printf "\n==== Start Execution 6 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 36 36 512 256 3 3 1 0 0 
+printf "\n==== Start Execution 7 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 34 34 256 512 1 1 1 0 0 
+printf "\n==== Start Execution 8 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 19 19 512 1024 3 3 1 0 0 
+printf "\n==== Start Execution 9 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 17 17 1024 512 1 1 1 0 0 
+
+printf "\n==== Start Execution 10 =====" 
+LD_LIBRARY_PATH=${libxpath}/lib LIBXSMM_VERBOSE=2 ./conv2d 100 1 17 17 28269 1024 1 1 1 0 0 
+
+printf "\n==== Done  =====" 
