@@ -1,0 +1,246 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz
+CPU type:	Intel Xeon Broadwell EN/EP/EX processor
+CPU clock:	2.40 GHz
+--------------------------------------------------------------------------------
+Sleeping longer as likwid_sleep() called without prior initialization
+5.309284--------------------------------------------------------------------------------
+Region Compute, Group 1: L3CACHE
++-------------------+----------+
+|    Region Info    |  Core 0  |
++-------------------+----------+
+| RDTSC Runtime [s] | 5.309064 |
+|     call count    |        1 |
++-------------------+----------+
+
++-------------------------------+---------+-------------+
+|             Event             | Counter |    Core 0   |
++-------------------------------+---------+-------------+
+|       INSTR_RETIRED_ANY       |  FIXC0  | 56779090000 |
+|     CPU_CLK_UNHALTED_CORE     |  FIXC1  | 17390320000 |
+|      CPU_CLK_UNHALTED_REF     |  FIXC2  | 12649240000 |
+|  MEM_LOAD_UOPS_RETIRED_L3_ALL |   PMC0  |      432985 |
+| MEM_LOAD_UOPS_RETIRED_L3_MISS |   PMC1  |        3989 |
+|        UOPS_RETIRED_ALL       |   PMC2  | 67349170000 |
++-------------------------------+---------+-------------+
+
++----------------------+--------------+
+|        Metric        |    Core 0    |
++----------------------+--------------+
+|  Runtime (RDTSC) [s] |       5.3091 |
+| Runtime unhalted [s] |       7.2543 |
+|      Clock [MHz]     |    3295.7376 |
+|          CPI         |       0.3063 |
+|    L3 request rate   | 6.428958e-06 |
+|     L3 miss rate     | 5.922864e-08 |
+|     L3 miss ratio    |       0.0092 |
++----------------------+--------------+
+
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz
+CPU type:	Intel Xeon Broadwell EN/EP/EX processor
+CPU clock:	2.40 GHz
+--------------------------------------------------------------------------------
+5.350814--------------------------------------------------------------------------------
+Region Compute, Group 1: L2CACHE
++-------------------+----------+
+|    Region Info    |  Core 0  |
++-------------------+----------+
+| RDTSC Runtime [s] | 5.350490 |
+|     call count    |        1 |
++-------------------+----------+
+
++-----------------------+---------+-------------+
+|         Event         | Counter |    Core 0   |
++-----------------------+---------+-------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 56779090000 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 17459620000 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 12740320000 |
+| L2_TRANS_ALL_REQUESTS |   PMC0  |   174435800 |
+|     L2_RQSTS_MISS     |   PMC1  |    13695990 |
++-----------------------+---------+-------------+
+
++----------------------+-----------+
+|        Metric        |   Core 0  |
++----------------------+-----------+
+|  Runtime (RDTSC) [s] |    5.3505 |
+| Runtime unhalted [s] |    7.2833 |
+|      Clock [MHz]     | 3285.1722 |
+|          CPI         |    0.3075 |
+|    L2 request rate   |    0.0031 |
+|     L2 miss rate     |    0.0002 |
+|     L2 miss ratio    |    0.0785 |
++----------------------+-----------+
+
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz
+CPU type:	Intel Xeon Broadwell EN/EP/EX processor
+CPU clock:	2.40 GHz
+--------------------------------------------------------------------------------
+5.296892--------------------------------------------------------------------------------
+Region Compute, Group 1: MEM
++-------------------+----------+
+|    Region Info    |  Core 0  |
++-------------------+----------+
+| RDTSC Runtime [s] | 5.295946 |
+|     call count    |        1 |
++-------------------+----------+
+
++-----------------------+---------+-------------+
+|         Event         | Counter |    Core 0   |
++-----------------------+---------+-------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 56779090000 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 17391420000 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 12648650000 |
+|      CAS_COUNT_RD     | MBOX0C0 |      -      |
+|      CAS_COUNT_WR     | MBOX0C1 |      -      |
+|      CAS_COUNT_RD     | MBOX1C0 |      -      |
+|      CAS_COUNT_WR     | MBOX1C1 |      -      |
+|      CAS_COUNT_RD     | MBOX2C0 |       19894 |
+|      CAS_COUNT_WR     | MBOX2C1 |       18166 |
+|      CAS_COUNT_RD     | MBOX3C0 |      349623 |
+|      CAS_COUNT_WR     | MBOX3C1 |      347793 |
+|      CAS_COUNT_RD     | MBOX4C0 |      349615 |
+|      CAS_COUNT_WR     | MBOX4C1 |      347786 |
+|      CAS_COUNT_RD     | MBOX5C0 |      349613 |
+|      CAS_COUNT_WR     | MBOX5C1 |      347785 |
+|      CAS_COUNT_RD     | MBOX6C0 |       19666 |
+|      CAS_COUNT_WR     | MBOX6C1 |       18344 |
+|      CAS_COUNT_RD     | MBOX7C0 |      345320 |
+|      CAS_COUNT_WR     | MBOX7C1 |      345839 |
++-----------------------+---------+-------------+
+
++-----------------------------------+-----------+
+|               Metric              |   Core 0  |
++-----------------------------------+-----------+
+|        Runtime (RDTSC) [s]        |    5.2959 |
+|        Runtime unhalted [s]       |    7.2550 |
+|            Clock [MHz]            | 3296.0179 |
+|                CPI                |    0.3063 |
+|  Memory read bandwidth [MBytes/s] |   17.3262 |
+|  Memory read data volume [GBytes] |    0.0918 |
+| Memory write bandwidth [MBytes/s] |   17.2293 |
+| Memory write data volume [GBytes] |    0.0912 |
+|    Memory bandwidth [MBytes/s]    |   34.5556 |
+|    Memory data volume [GBytes]    |    0.1830 |
++-----------------------------------+-----------+
+
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz
+CPU type:	Intel Xeon Broadwell EN/EP/EX processor
+CPU clock:	2.40 GHz
+--------------------------------------------------------------------------------
+5.332096--------------------------------------------------------------------------------
+Region Compute, Group 1: CACHES
++-------------------+----------+
+|    Region Info    |  Core 0  |
++-------------------+----------+
+| RDTSC Runtime [s] | 5.330466 |
+|     call count    |        1 |
++-------------------+----------+
+
++-----------------------+----------+-------------+
+|         Event         |  Counter |    Core 0   |
++-----------------------+----------+-------------+
+|   INSTR_RETIRED_ANY   |   FIXC0  | 56779100000 |
+| CPU_CLK_UNHALTED_CORE |   FIXC1  | 17505030000 |
+|  CPU_CLK_UNHALTED_REF |   FIXC2  | 12731430000 |
+|    L1D_REPLACEMENT    |   PMC0   |    83595150 |
+|    L2_TRANS_L1D_WB    |   PMC1   |     5975389 |
+|    L2_LINES_IN_ALL    |   PMC2   |    13300690 |
+|     L2_TRANS_L2_WB    |   PMC3   |     1138943 |
+|     LLC_VICTIMS_M     |  CBOX0C1 |        4876 |
+|     LLC_VICTIMS_M     |  CBOX1C1 |        4920 |
+|     LLC_VICTIMS_M     |  CBOX2C1 |        4764 |
+|     LLC_VICTIMS_M     |  CBOX3C1 |        4777 |
+|     LLC_VICTIMS_M     |  CBOX4C1 |        4862 |
+|     LLC_VICTIMS_M     |  CBOX5C1 |        4899 |
+|     LLC_VICTIMS_M     |  CBOX6C1 |        4933 |
+|     LLC_VICTIMS_M     |  CBOX7C1 |        4837 |
+|     LLC_VICTIMS_M     |  CBOX8C1 |        4942 |
+|     LLC_VICTIMS_M     |  CBOX9C1 |        4924 |
+|     LLC_VICTIMS_M     | CBOX10C1 |        4865 |
+|     LLC_VICTIMS_M     | CBOX11C1 |        4916 |
+|     LLC_VICTIMS_M     | CBOX12C1 |        3533 |
+|     LLC_VICTIMS_M     | CBOX13C1 |        3436 |
+|     LLC_VICTIMS_M     | CBOX14C1 |      -      |
+|     LLC_VICTIMS_M     | CBOX15C1 |      -      |
+|     LLC_VICTIMS_M     | CBOX16C1 |      -      |
+|     LLC_VICTIMS_M     | CBOX17C1 |      -      |
+|     LLC_VICTIMS_M     | CBOX18C1 |      -      |
+|     LLC_VICTIMS_M     | CBOX19C1 |      -      |
+|     LLC_VICTIMS_M     | CBOX20C1 |      -      |
+|     LLC_VICTIMS_M     | CBOX21C1 |      -      |
+|  LLC_LOOKUP_DATA_READ |  CBOX0C0 |     1068096 |
+|  LLC_LOOKUP_DATA_READ |  CBOX1C0 |     1077065 |
+|  LLC_LOOKUP_DATA_READ |  CBOX2C0 |     1078607 |
+|  LLC_LOOKUP_DATA_READ |  CBOX3C0 |     1053502 |
+|  LLC_LOOKUP_DATA_READ |  CBOX4C0 |     1086704 |
+|  LLC_LOOKUP_DATA_READ |  CBOX5C0 |     1074507 |
+|  LLC_LOOKUP_DATA_READ |  CBOX6C0 |     1076923 |
+|  LLC_LOOKUP_DATA_READ |  CBOX7C0 |     1071979 |
+|  LLC_LOOKUP_DATA_READ |  CBOX8C0 |     1075194 |
+|  LLC_LOOKUP_DATA_READ |  CBOX9C0 |     1082652 |
+|  LLC_LOOKUP_DATA_READ | CBOX10C0 |     1093001 |
+|  LLC_LOOKUP_DATA_READ | CBOX11C0 |     1092775 |
+|  LLC_LOOKUP_DATA_READ | CBOX12C0 |      934438 |
+|  LLC_LOOKUP_DATA_READ | CBOX13C0 |      930990 |
+|  LLC_LOOKUP_DATA_READ | CBOX14C0 |      -      |
+|  LLC_LOOKUP_DATA_READ | CBOX15C0 |      -      |
+|  LLC_LOOKUP_DATA_READ | CBOX16C0 |      -      |
+|  LLC_LOOKUP_DATA_READ | CBOX17C0 |      -      |
+|  LLC_LOOKUP_DATA_READ | CBOX18C0 |      -      |
+|  LLC_LOOKUP_DATA_READ | CBOX19C0 |      -      |
+|  LLC_LOOKUP_DATA_READ | CBOX20C0 |      -      |
+|  LLC_LOOKUP_DATA_READ | CBOX21C0 |      -      |
+|      CAS_COUNT_RD     |  MBOX0C0 |      -      |
+|      CAS_COUNT_WR     |  MBOX0C1 |      -      |
+|      CAS_COUNT_RD     |  MBOX1C0 |      -      |
+|      CAS_COUNT_WR     |  MBOX1C1 |      -      |
+|      CAS_COUNT_RD     |  MBOX2C0 |       26629 |
+|      CAS_COUNT_WR     |  MBOX2C1 |       19818 |
+|      CAS_COUNT_RD     |  MBOX3C0 |      358544 |
+|      CAS_COUNT_WR     |  MBOX3C1 |      351622 |
+|      CAS_COUNT_RD     |  MBOX4C0 |      358566 |
+|      CAS_COUNT_WR     |  MBOX4C1 |      351664 |
+|      CAS_COUNT_RD     |  MBOX5C0 |      358605 |
+|      CAS_COUNT_WR     |  MBOX5C1 |      351665 |
+|      CAS_COUNT_RD     |  MBOX6C0 |       26640 |
+|      CAS_COUNT_WR     |  MBOX6C1 |       20349 |
+|      CAS_COUNT_RD     |  MBOX7C0 |      353699 |
+|      CAS_COUNT_WR     |  MBOX7C1 |      349200 |
++-----------------------+----------+-------------+
+
++----------------------------------------+-----------+
+|                 Metric                 |   Core 0  |
++----------------------------------------+-----------+
+|           Runtime (RDTSC) [s]          |    5.3305 |
+|          Runtime unhalted [s]          |    7.3024 |
+|               Clock [MHz]              | 3295.9805 |
+|                   CPI                  |    0.3083 |
+|   L2 to L1 load bandwidth [MBytes/s]   | 1003.6814 |
+|   L2 to L1 load data volume [GBytes]   |    5.3501 |
+|   L1 to L2 evict bandwidth [MBytes/s]  |   71.7432 |
+|   L1 to L2 evict data volume [GBytes]  |    0.3824 |
+|   L1 to/from L2 bandwidth [MBytes/s]   | 1075.4246 |
+|   L1 to/from L2 data volume [GBytes]   |    5.7325 |
+|   L3 to L2 load bandwidth [MBytes/s]   |  159.6941 |
+|   L3 to L2 load data volume [GBytes]   |    0.8512 |
+|   L2 to L3 evict bandwidth [MBytes/s]  |   13.6747 |
+|   L2 to L3 evict data volume [GBytes]  |    0.0729 |
+|   L2 to/from L3 bandwidth [MBytes/s]   |  173.3688 |
+|   L2 to/from L3 data volume [GBytes]   |    0.9241 |
+|    System to L3 bandwidth [MBytes/s]   |  177.6527 |
+|    System to L3 data volume [GBytes]   |    0.9470 |
+|    L3 to system bandwidth [MBytes/s]   |    0.7862 |
+|    L3 to system data volume [GBytes]   |    0.0042 |
+| L3 to/from system bandwidth [MBytes/s] |  178.4389 |
+| L3 to/from system data volume [GBytes] |    0.9512 |
+|    Memory read bandwidth [MBytes/s]    |   17.8018 |
+|    Memory read data volume [GBytes]    |    0.0949 |
+|    Memory write bandwidth [MBytes/s]   |   17.3411 |
+|    Memory write data volume [GBytes]   |    0.0924 |
+|       Memory bandwidth [MBytes/s]      |   35.1429 |
+|       Memory data volume [GBytes]      |    0.1873 |
++----------------------------------------+-----------+
+
