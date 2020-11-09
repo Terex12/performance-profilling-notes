@@ -1,20 +1,22 @@
 CXXFLAGS += -g -O3 -Wall -std=c++11
 
+#CHPC env
+LIKWID_INC=/uufs/chpc.utah.edu/sys/installdir/likwid/5.0.1/include
+LIKWID_LIB=/uufs/chpc.utah.edu/sys/installdir/likwid/5.0.1/lib
 
-DEPS=conv2d.cpp
-DEPS1=test-lik.cpp
+
 DEPSTREAM=stream.cpp
-all:  stream#conv-papi conv-likw
+all: stream test-lik
 
 
-conv-likw: $(DEPS)
-	$(CXX) $(CXXFLAGS) -DLIKWID_PERFMON -DA $(LIKWID_INC) $(LIKWID_LIB) -o $@ $< $(LIKWID_LINK)
+test-lik: test-lik.cpp
+	$(CXX) $(CXXFLAGS) -I$(LIKWID_INC) -L$(LIKWID_LIB) -DLIKWID_PERFMON -o $@ $< -llikwid
 
-test-lik: $(DEPS1)
-	$(CXX) $(CXXFLAGS) -DLIKWID_PERFMON -o $@ $< -llikwid
-
-test-lik-novec: $(DEPS1)
-	$(CXX) $(CXXFLAGS) -fno-tree-vectorize -DLIKWID_PERFMON -o $@ $< -llikwid
+test-lik-novec: test-lik.cpp
+	$(CXX) $(CXXFLAGS) -I$(LIKWID_INC) -L$(LIKWID_LIB) -fno-tree-vectorize -DLIKWID_PERFMON -o $@ $< -llikwid
 
 stream: $(DEPSTREAM)
-	$(CXX) $(CXXFLAGS) -fopenmp -DLIKWID_PERFMON -o $@ $< -llikwid
+	$(CXX) $(CXXFLAGS) -I$(LIKWID_INC) -L$(LIKWID_LIB) -fopenmp -DLIKWID_PERFMON -o $@ $< -llikwid
+
+clean:
+	rm test-lik stream

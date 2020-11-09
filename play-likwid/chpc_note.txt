@@ -1,0 +1,13 @@
+//cache
+likwid-perfctr -C 0 -m -g MEM_LOAD_RETIRED_L1_HIT:PMC0,MEM_LOAD_RETIRED_L1_MISS:PMC1,MEM_LOAD_RETIRED_L1_ALL:PMC2,FRONTEND_RETIRED_L1I_MISS:PMC3 ./test-lik-novec
+
+//FLOPS
+likwid-perfctr -C 0 -m -g FLOPS_SP ./test-lik
+
+
+//need 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/uufs/chpc.utah.edu/sys/installdir/likwid/5.0.1/lib
+
+//CHPC
+LIKWID_INC=/uufs/chpc.utah.edu/sys/installdir/likwid/5.0.1/include
+LIKWID_LIB=/uufs/chpc.utah.edu/sys/installdir/likwid/5.0.1/lib
